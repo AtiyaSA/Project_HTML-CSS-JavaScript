@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>Contact Us</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{background:rgb(69,69,69);}
+.mapouter{position:absolute;text-align:right;height:500px;width:600px; top:10%; left:45%; z-index:-1;}
+.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}
+
+.footer {position:fixed;left:0;bottom:0;width:100%; background:rgb(40,40,40); color:white;text-align:center;height:7%}
+.fa {padding:20px; font-size:30px; width:30px; text-align:center; text-decoration:none; border-radius:50%;text-decoration:none;color:white;;line-height:5px;}
+.fa:hover {opacity:0.7;}
+.cu{text-decoration:none; font-size:2vw; color:white;}
+
+form{position:absolute;font-family:Century Gothic;font-size:1vw; top:10%;left:5%; color:white;}
+input[type="text"]
+{background-color:rgba(69,69,69,0.5); color:white;}
+textarea{background-color:rgba(69,69,69,0.5); color:white;}
+a{text-decoration:none; color:white;}
+#menu {background:rgba(0,0,0,0.2); width:100%; height:7%;position:fixed;top:0%; left:0%;}
+.mm{position:absolute; color:white; font-size:1.5vw; height:100%; line-height:45px;font-family:Century Gothic; top:0%; width:10%; text-align:center;}
+#hh{left:7%;}
+#aa{left:25%;}
+#gg{left:45%;}
+#sh{left:63%;}
+#cc{left:80%;}
+.mm:hover{background-color:black;}
+.ss{position:absolute; left:-60%; visibility:hidden;height:100%; background:rgba(0,0,0,0.2); width:220%;}
+#nn1 {top:100%;}
+#nn2 {top:200%;}
+#nn3 {top:300%;}
+#nn4 {top:400%;}
+#nn5 {top:500%;}
+#nn6 {top:600%;}
+#nn7 {top:700%;}
+#nn8 {top:800%;}
+#gg:hover .ss{visibility:visible;}
+#aa:hover .ss{visibility:visible;}
+.ss:hover{background-color:black;}
+
+
+
+</style>
+
+</head>
+<!--Menu-->
+<div id="menu" class="header">
+	<div id="hh" class="mm"><a href="home.html">HOME</a></div>
+	<div id="aa" class="mm"><a href="synopsis.html">ANIME</a>
+	<div id="nn1" class="ss"><a href="synopsis.html#sec1">NARUTO</a></div>
+		<div id="nn2" class="ss"><a href="synopsis.html#sec2">BLEACH</a></div>
+		<div id="nn3" class="ss"><a href="synopsis.html#sec3">NANATSU NO TAIZAI    </a></div>
+		<div id="nn4" class="ss"><a href="synopsis.html#sec4">BOKU NO HERO ACADEMIA</a></div>
+		<div id="nn5" class="ss"><a href="synopsis.html#sec5">FULL METAL ALCHEMIST </a></div>
+		<div id="nn6" class="ss"><a href="synopsis.html#sec6">COWBOY BEBOP         </a></div>
+		<div id="nn7" class="ss"><a href="synopsis.html#sec7">ANOTHER      </a></div>
+		<div id="nn8" class="ss"><a href="synopsis.html#sec8">TOKYO GHOUL   </a></div>
+	</div>
+	<div id="gg" class="mm">GALLERY
+		<div id="nn1" class="ss"><a href="CharactersNaruto.html">NARUTO</a></div>
+		<div id="nn2" class="ss"><a href="CharactersBleach.html">BLEACH</a></div>
+		<div id="nn3" class="ss"><a href="Characters7ds.html">NANATSU NO TAIZAI    </a></div>
+		<div id="nn4" class="ss"><a href="CharactersBnha.html">BOKU NO HERO ACADEMIA</a></div>
+		<div id="nn5" class="ss"><a href="CharactersFMA.html">FULL METAL ALCHEMIST </a></div>
+		<div id="nn6" class="ss"><a href="CharactersCowboy.html">COWBOY BEBOP         </a></div>
+		<div id="nn7" class="ss"><a href="CharactersAnother.html">ANOTHER      </a></div>
+		<div id="nn8" class="ss"><a href="CharactersTG.html">TOKYO GHOUL   </a></div>
+	</div>
+	<div id="sh" class="mm"><a href="shop.html">SHOP</a></div>
+	<div id="cc" class="mm"><a href="contact.html">CONTACT US</a></div>
+</div>
+<!--Map-->
+<div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=argus%20academy&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div></div>
+
+<!--Form-->
+<form>
+NAME:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="n" onblur="checkname()">
+	<span id="ne" style="color:red;"></span><br><br>
+EMAIL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="e" onblur="checkemail()">
+	<span id="ee" style="color:red;"></span> <br><br>
+MESSAGE:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="10" cols="50"></textarea><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Send" onclick="sent()">
+</form>
+<!--Footer-->
+	<div class="footer">
+		<a href="https://www.facebook.com/AnimeMirchi/" class="fa fa-facebook "></a>
+		<a href="https://www.instagram.com/animemirchi/" class="fa fa-instagram "></a>
+		<a href="contact.html" class="cu">Contact Us</a>
+	</div>
+<script>
+function checkname()
+{
+	var nm,nc;
+	nm=document.getElementById("n").value;
+	nc=/^[a-zA-Z ]+$/;
+	if((!nm.match(nc))||(nm.charAt(0)==" "))
+	{
+		document.getElementById("ne").innerHTML="**Name Error**";
+	return 'n';
+	}
+	else
+	{
+		document.getElementById("ne").innerHTML="";
+	return 'y';
+	}
+}
+function checkemail()
+{
+	var em,ec;
+	em=document.getElementById("e").value;
+	ec=/^[a-zA-Z0-9._-]+\@[a-zA-Z]+\.[a-zA-Z.]{2,6}$/;
+	if(!em.match(ec))
+	{
+		document.getElementById("ee").innerHTML="**Email Error**";
+	return 'n';
+	}
+	else
+	{
+		document.getElementById("ee").innerHTML="";
+return 'y';
+		}
+}
+
+function sent()
+{
+	if(checkname()=='y' && checkemail()=='y')
+	{
+		alert("Your message has been sent.");
+	}
+	else
+	{
+	alert("Check your details.");
+	}
+}
+</script>
+</html>

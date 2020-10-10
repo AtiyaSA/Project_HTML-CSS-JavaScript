@@ -1,0 +1,138 @@
+<head>
+<>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<script>
+var a=new Array('images/tg/bg3.jpg','images/naruto/bg3.jpg','images/bleach/bg3.jpg','images/7ds/bg3.jpg','images/bnha/bg3.jpg','images/fma/bg3.jpg','images/cowboy/bg3.jpg','images/another/bg.jpg');
+var g=new Array('Tokyo Ghoul','Naruto','Bleach','Nanatsu no Taizai','Boku no Hero Academia','FullMetal Alchemist','Cowboy Bebop','Another');
+var i=0;
+function slider()
+{
+	if(i<7)
+	{
+	i++;
+	}
+	else
+	{
+	i=0;
+	}
+	document.getElementById("m").src=a[i];
+	document.getElementById("s").innerHTML=g[i];
+	setTimeout("slider()",3000);
+	return i;
+} 
+function next()
+{
+	if(i<7)
+	{
+	i++;
+	}
+	else
+	{
+	i=0;
+	}
+	document.getElementById("m").src=a[i];
+	document.getElementById("s").innerHTML=g[i];
+}
+function previous()
+{
+	if(i>0)
+	{
+	i--;
+	}
+	else
+	{
+	i=7;
+	}
+	document.getElementById("m").src=a[i];
+	document.getElementById("s").innerHTML=g[i];
+}
+</script>
+<style>
+#x{position:absolute;top:0%;width:100%;height:80%;
+left:0%;}
+#s{position:absolute;width:100%;background:rgba(0,0,0,0.2);bottom:0%;left:0%;color:white;font-family:forte;font-size:2vw;line-height:50px;height:15%; text-align:center;}
+.pointer{position:absolute; top:45%; height:50px; width:50px; border-radius:50%; background:rgba(0,0,0,0.6); color:white; font-family:Courier New; line-height:50px; font-size:3vw; text-align:center;cursor:pointer;}
+.pointer:hover{background:rgba(0,0,0,0.8);}
+#next{right: 0%;}
+#previous{left:0%;}
+#body {position:absolute; top:90%; left:5%}
+
+a{text-decoration:none; color:white;}
+#menu {background:rgba(0,0,0,0.2); width:100%; height:7%;position:fixed;top:0%; left:0%;}
+.mm{position:absolute; color:white; font-size:1.5vw; height:100%; line-height:45px; top:0%; width:10%; text-align:center;font-family:Century Gothic;}
+#hh{left:7%;}
+#aa{left:25%;}
+#gg{left:45%;}
+#sh{left:63%;}
+#cc{left:80%;}
+.mm:hover{background-color:black;}
+.ss{position:absolute; left:-60%; visibility:hidden;height:100%; background:rgba(0,0,0,0.2); width:220%;}
+#nn1 {top:100%;}
+#nn2 {top:200%;}
+#nn3 {top:300%;}
+#nn4 {top:400%;}
+#nn5 {top:500%;}
+#nn6 {top:600%;}
+#nn7 {top:700%;}
+#nn8 {top:800%;}
+#gg:hover .ss{visibility:visible;}
+#aa:hover .ss{visibility:visible;}
+.ss:hover{background-color:black;}
+
+
+.footer {position:fixed;left:0;bottom:0;width:100%; background:rgb(40,40,40); color:white;text-align:center;height:7%}
+.fa {padding:20px; font-size:30px; width:30px; text-align:center; text-decoration:none; border-radius:50%;text-decoration:none;color:white;;line-height:5px;}
+.fa:hover {opacity:0.7;}
+.cu{text-decoration:none; font-size:2vw; color:white;}
+
+
+</style>
+<body onload="slider()">
+<!-- SlideShow -->
+	<div id="x">
+		<img src="images/naruto/bg3.jpg" width="100%" height="100%" id="m">
+		<span id="next" class="pointer" onclick="next()">></span>
+		<span id="previous" class="pointer" onclick="previous()"><</span>
+		<span id="s">Naruto</span>
+	</div>
+<!-- Menu -->
+<div id="menu" class="header">
+	<div id="hh" class="mm"><a href="home.html">HOME</a></div>
+	<div id="aa" class="mm"><a href="synopsis.html">ANIME</a>
+		<div id="nn1" class="ss"><a href="synopsis.html#sec1">NARUTO</a></div>
+		<div id="nn2" class="ss"><a href="synopsis.html#sec2">BLEACH</a></div>
+		<div id="nn3" class="ss"><a href="synopsis.html#sec3">NANATSU NO TAIZAI    </a></div>
+		<div id="nn4" class="ss"><a href="synopsis.html#sec4">BOKU NO HERO ACADEMIA</a></div>
+		<div id="nn5" class="ss"><a href="synopsis.html#sec5">FULL METAL ALCHEMIST </a></div>
+		<div id="nn6" class="ss"><a href="synopsis.html#sec6">COWBOY BEBOP         </a></div>
+		<div id="nn7" class="ss"><a href="synopsis.html#sec7">ANOTHER      </a></div>
+		<div id="nn8" class="ss"><a href="synopsis.html#sec8">TOKYO GHOUL   </a></div>
+	</div>
+	<div id="gg" class="mm">GALLERY
+		<div id="nn1" class="ss"><a href="CharactersNaruto.html">NARUTO</a></div>
+		<div id="nn2" class="ss"><a href="CharactersBleach.html">BLEACH</a></div>
+		<div id="nn3" class="ss"><a href="Characters7ds.html">NANATSU NO TAIZAI    </a></div>
+		<div id="nn4" class="ss"><a href="CharactersBnha.html">BOKU NO HERO ACADEMIA</a></div>
+		<div id="nn5" class="ss"><a href="CharactersFMA.html">FULL METAL ALCHEMIST </a></div>
+		<div id="nn6" class="ss"><a href="CharactersCowboy.html">COWBOY BEBOP         </a></div>
+		<div id="nn7" class="ss"><a href="CharactersAnother.html">ANOTHER      </a></div>
+		<div id="nn8" class="ss"><a href="CharactersTG.html">TOKYO GHOUL   </a></div>
+	</div>
+	<div id="sh" class="mm"><a href="shop.html">SHOP</a></div>
+	<div id="cc" class="mm"><a href="contact.html">CONTACT US</a></div>
+</div>
+<!-- Body -->
+	<div id="body">
+		<h2 style="border-bottom:6px solid crimson;width:8%">About us: </h2>
+		<p style="font-family:Batang; font-size:2vw;">We at Otaku India want to make anime available easily to our fellow Indian Otakus. Thus, here we get the DVDs directly from Japan and add subtitle to it. Although these are not the official subtitles, they still let you contribute to your favorite creators. We are a small group of people working hard on these projects and hence, have a very limited collection. But we assure you that we are recruiting more and will bring you more Anime titles as fast as we can. Thank you for shopping with us and supporting us.<br>
+		Please check out from the collection we have in the 'ANIME' section.
+		</p><br><br><br><br><br>	
+	</div>
+	<!--Footer-->
+	<div class="footer">
+		<a href="https://www.facebook.com/AnimeMirchi/" class="fa fa-facebook "></a>
+		<a href="https://www.instagram.com/animemirchi/" class="fa fa-instagram "></a>
+		<a href="contact.html" class="cu">Contact Us</a>
+	</div>
+</body>

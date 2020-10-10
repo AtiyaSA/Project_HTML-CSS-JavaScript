@@ -1,0 +1,158 @@
+<head>
+<title>Shop</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="functions.js"></script>
+<script src="validation.js"></script>
+<style>
+body{background:rgb(69,69,69);}
+#note {position:absolute;left:30%;animation:aa 2s infinite linear;color:white;}
+@keyframes aa{
+0%{color:white;}
+50%{color:red;}
+100%	{color:white;}
+}
+form{position:absolute;font-family:Century Gothic;font-size:1vw; top:20%;left:5%; color:white;}
+input[type="text"]
+{background-color:rgba(69,69,69,0.5); color:white;}
+textarea{background-color:rgba(69,69,69,0.5); color:white;}
+select{background-color:rgba(69,69,69,0.5); color:white;}
+
+.footer {position:fixed;left:0;bottom:0;width:100%; background:rgb(40,40,40); color:white;text-align:center;height:7%}
+.fa {padding:20px; font-size:30px; width:30px; text-align:center; text-decoration:none; border-radius:50%;text-decoration:none;color:white;;line-height:5px;}
+.fa:hover {opacity:0.7;}
+.cu{text-decoration:none; font-size:2vw; color:white;}
+
+a{text-decoration:none; color:white;}
+#menu {background:rgba(0,0,0,0.2); width:100%; height:7%;position:fixed;top:0%; left:0%;}
+.mm{position:absolute; color:white; font-size:1.5vw; height:100%; line-height:45px; top:0%; width:10%; text-align:center;font-family:Century Gothic;}
+#hh{left:7%;}
+#aa{left:25%;}
+#gg{left:45%;}
+#sh{left:63%;}
+#cc{left:80%;}
+.mm:hover{background-color:black;}
+.ss{position:absolute; left:-60%; visibility:hidden;height:100%; background:rgba(0,0,0,0.2); width:220%;}
+#nn1 {top:100%;}
+#nn2 {top:200%;}
+#nn3 {top:300%;}
+#nn4 {top:400%;}
+#nn5 {top:500%;}
+#nn6 {top:600%;}
+#nn7 {top:700%;}
+#nn8 {top:800%;}
+#gg:hover .ss{visibility:visible;}
+#aa:hover .ss{visibility:visible;}
+.ss:hover{background-color:black;}
+</style>
+<head>
+<body>
+<form>
+	Name:&nbsp;&nbsp;&nbsp;<input type="text" id="n" onblur="checkname()">
+	<span id="ne" style="color:red;"></span><br><br>
+	Email:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="e" onblur="checkemail()"><span id="ee" style="color:red;"></span> <br><br>
+	Address:<textarea id="a" cols="20" rows="7" onblur="checkaddress()"></textarea><span id="ae" style="color:red;"></span><div id="note">Note: As of now, we can only ship 3 products with 3 units each, at a time. We deeply apologize for the inconvinence caused. Thank you.</div><br><br>
+	Phone:&nbsp;&nbsp;&nbsp;<input type="text" id="p" maxlength="10" onblur="checkphone()"><span id="pe" style="color:red;"></span><br><br>
+	
+	Product: 
+	<select id="pr" onchange="sel()">
+		<option value="select">Select</option>
+		<option value="Naruto">Naruto</option>
+		<option value="Bleach">Bleach</option>
+		<option value="Nanatsu no Taizai">Nanatsu no Taizai</option>
+		<option value="Boku no Hero Academia">Boku no Hero Academia</option>
+		<option value="Full Metal Alchemist">Full Metal Alchemist</option>
+		<option value="Cowboy Bebop">Cowboy Bebop</option>
+		<option value="Another">Another</option>
+		<option value="Tokyo Ghoul">Tokyo Ghoul</option>
+	</select>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Rate: <input type="text" id="r" readonly value="0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Quantity:
+	<select id="q">
+		<option value="select">Select</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		
+	</select>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Image: <img src="" id="i" width="100px" height="100px">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<button  type="button" onclick="add()">Add</button><br><br><br>
+
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Cart:</b><br><br>
+	<table border="1" align="center"> 
+		<tr>
+			<th>Product</th>
+			<th>Rate</th>
+			<th>Quantity</th>
+			<th>Image</th>
+			<th>Clear</th>
+		</tr>
+		<tr>
+			<th><input type="text" id="pr1" readonly value="0"></th>
+			<th><input type="text" id="r1" readonly  value="0"></th>
+			<th><input type="text" id="q1" readonly  value="0"></th>
+			<th><img src="" id="i1" width="70px" height="70px"></th>
+			<th><button type="button" onclick="clc1()">Clear</button></th>
+		</tr>
+		<tr>
+			<th><input type="text" id="pr2" readonly value="0"></th>
+			<th><input type="text" id="r2" readonly  value="0"></th>
+			<th><input type="text" id="q2" readonly  value="0"></th>
+			<th><img src="" id="i2" width="70px" height="70px"></th>
+			<th><button type="button" onclick="clc2()">Clear</button></th>
+		</tr>
+		<tr>
+			<th><input type="text" id="pr3" readonly value="0"></th>
+			<th><input type="text" id="r3" readonly  value="0"></th>
+			<th><input type="text" id="q3" readonly  value="0"></th>
+			<th><img src="" id="i3" width="70px" height="70px"></th>
+			<th><button type="button" onclick="clc3()">Clear</button></th>
+		</tr>
+	</table>
+<br><br>
+<center>
+<button type="button" onclick="bill()">Bill</button>
+<br><br>
+<b>Bill Details<b>
+<br><br>
+<textarea readonly rows="19" cols="32" id="t"></textarea></center><br><br><br>
+</form>
+
+<!--Menu-->
+<div id="menu" class="header">
+	<div id="hh" class="mm"><a href="home.html">HOME</a></div>
+	<div id="aa" class="mm"><a href="synopsis.html">ANIME</a>
+		<div id="nn1" class="ss"><a href="synopsis.html#sec1">NARUTO</a></div>
+		<div id="nn2" class="ss"><a href="synopsis.html#sec2">BLEACH</a></div>
+		<div id="nn3" class="ss"><a href="synopsis.html#sec3">NANATSU NO TAIZAI    </a></div>
+		<div id="nn4" class="ss"><a href="synopsis.html#sec4">BOKU NO HERO ACADEMIA</a></div>
+		<div id="nn5" class="ss"><a href="synopsis.html#sec5">FULL METAL ALCHEMIST </a></div>
+		<div id="nn6" class="ss"><a href="synopsis.html#sec6">COWBOY BEBOP         </a></div>
+		<div id="nn7" class="ss"><a href="synopsis.html#sec7">ANOTHER      </a></div>
+		<div id="nn8" class="ss"><a href="synopsis.html#sec8">TOKYO GHOUL   </a></div>
+	</div>
+	<div id="gg" class="mm">GALLERY
+		<div id="nn1" class="ss"><a href="CharactersNaruto.html">NARUTO</a></div>
+		<div id="nn2" class="ss"><a href="CharactersBleach.html">BLEACH</a></div>
+		<div id="nn3" class="ss"><a href="Characters7ds.html">NANATSU NO TAIZAI    </a></div>
+		<div id="nn4" class="ss"><a href="CharactersBnha.html">BOKU NO HERO ACADEMIA</a></div>
+		<div id="nn5" class="ss"><a href="CharactersFMA.html">FULL METAL ALCHEMIST </a></div>
+		<div id="nn6" class="ss"><a href="CharactersCowboy.html">COWBOY BEBOP         </a></div>
+		<div id="nn7" class="ss"><a href="CharactersAnother.html">ANOTHER      </a></div>
+		<div id="nn8" class="ss"><a href="CharactersTG.html">TOKYO GHOUL   </a></div>
+	</div>
+	<div id="sh" class="mm"><a href="shop.html">SHOP</a></div>
+	<div id="cc" class="mm"><a href="contact.html">CONTACT US</a></div>
+</div>
+<!--Footer-->
+	<div class="footer">
+		<a href="https://www.facebook.com/AnimeMirchi/" class="fa fa-facebook "></a>
+		<a href="https://www.instagram.com/animemirchi/" class="fa fa-instagram "></a>
+		<a href="contact.html" class="cu">Contact Us</a>
+	</div>
+</body>
